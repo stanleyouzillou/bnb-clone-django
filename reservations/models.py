@@ -6,8 +6,8 @@ from core import models as core_models
 
 class Reservation(core_models.TimeStampedModel):
 
-    STATUS_PENDING = ("pending",)
-    STATUS_CONFIRMED = ("confirmed",)
+    STATUS_PENDING = "pending"
+    STATUS_CONFIRMED = "confirmed"
     STATUS_CANCELED = "canceled"
 
     STATUS_CHOICES = (
@@ -27,4 +27,3 @@ class Reservation(core_models.TimeStampedModel):
 
     def __str__(self):
         return f"{self.room} - {self.check_in}"
-
