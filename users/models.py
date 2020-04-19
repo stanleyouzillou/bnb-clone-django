@@ -28,7 +28,7 @@ class User(AbstractUser):
 
     CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_EUR, "EUR"))
 
-    avatar = models.ImageField(blank=True)
+    avatar = models.ImageField(blank=True, upload_to="avatars")
     gender = models.CharField(
         max_length=10, choices=GENDER_CHOICES, blank=True, null=False
     )
@@ -37,4 +37,3 @@ class User(AbstractUser):
     language = models.CharField(blank=True, choices=LANGUAGE_CHOICES, max_length=50)
     currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, blank=True)
     superhost = models.BooleanField(default=False, null=True)
-

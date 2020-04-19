@@ -8,6 +8,8 @@ from . import models
 class CustomUserAdmin(UserAdmin):
     """Custoler User Admin"""
 
+    list_filter = UserAdmin.list_filter + ("superhost",)
+
     fieldsets = UserAdmin.fieldsets + (
         (
             "Custom Profile",
