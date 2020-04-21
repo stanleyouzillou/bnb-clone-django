@@ -10,6 +10,8 @@ class CustomUserAdmin(UserAdmin):
 
     list_filter = UserAdmin.list_filter + ("superhost",)
 
+    list_display = UserAdmin.list_display + ("superhost", "language", "currency",)
+
     fieldsets = UserAdmin.fieldsets + (
         (
             "Custom Profile",
